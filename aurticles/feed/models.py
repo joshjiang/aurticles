@@ -3,6 +3,8 @@ import datetime
 from django.utils import timezone
 from django.db import models
 from django.forms import ModelForm
+from bs4 import BeautifulSoup
+
 
 class User(models.Model):
     time_published = models.DateTimeField('date published')
@@ -17,16 +19,13 @@ class User(models.Model):
 class Article(models.Model):
     title = models.CharField(max_length = 500)
     publisher = models.CharField(max_length = 500)
-
-    text_contents = models.TextField()
+    body = models.TextField()
     time_published = models.DateTimeField('date published')
     time_added = models.DateTimeField('date added')
     hyperlink = models.URLField()
-
     # TODO: audio, categories
     # audio = models.FileField(upload_to=None, max_length=100)
     # categories = foreignkey models.Categories 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)    
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)    
     def __str__(self):
-        return self.name
-
+        return self.title

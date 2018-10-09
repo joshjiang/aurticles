@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+
+    <title>{% block title %}My amazing site{% endblock %}</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>Aurticles</h1>
+            </div>
+        </div>
+        {% comment %} <div class="row">
+            <div id="sidebar col-md-2">
+                {% block sidebar %}
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li class="nav-item"><a href="/articles/"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                            Articles</a></li>
+                </ul>
+                {% endblock %}
+            </div>
+        </div> {% endcomment %}
+        <div class="row">
+            <div id="content" class="col-md-10">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
