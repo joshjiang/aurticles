@@ -18,11 +18,13 @@ class User(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length = 500)
-    publisher = models.CharField(max_length = 500)
+    publisher = models.CharField(max_length = 500, blank=True, null=True)
     body = models.TextField()
-    time_published = models.DateTimeField('date published')
+    time_published = models.DateTimeField('date published',blank=True, null=True)
     time_added = models.DateTimeField('date added')
     hyperlink = models.URLField()
+    categories = models.TextField(blank=True, null=True)
+    audio_filename = models.TextField(blank=True, null=True)
     # TODO: audio, categories
     # audio = models.FileField(upload_to=None, max_length=100)
     # categories = foreignkey models.Categories 

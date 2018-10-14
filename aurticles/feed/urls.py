@@ -6,7 +6,8 @@ from . import views
 app_name = 'feed'
 urlpatterns = [
     path('', views.index, name='index'), 
-    # path('get_articles/', views.get_articles, name='get_articles'),
+    path('get_articles/', views.get_articles, name='get_articles'),
+    path('<int:article_id>/', views.detail, name='detail'),
 
     # TODO swap game and detail urls    
     # path('<int:game_id>/', views.game, name='game'),

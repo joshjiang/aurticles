@@ -1,13 +1,16 @@
 {% extends "feed/base.html" %}
-
-{% block title %}Aurticles{% endblock %}
-
 {% block content %}
-<h2><i class="fas fa-newspaper    "></i> Feed</h2>
+<h3><i class="fas fa-newspaper"></i> Feed</h3>
+
+<hr>
+
 {% for article in latest_article_list %}
-<a href="{{article.hyperlink}}">
-    <h2>Title: {{ article.title }}</h2>
-    <p>Time Published: {{ article.time_published }}</p>
+<a href="{% url 'feed:detail' article.id %} ">
+    <h4>{{ article.title }}</h2>
 </a>
+    <p><i class="fas fa-clock    "></i> {{ article.time_published }}</p>
+    {% if article.publisher is not None and  article.publisher != ""  %}
+    <p><i class="fab fa-facebook-square    "></i> {{ article.publisher }}</p>
+    {% endif %}
 {% endfor %}
 {% endblock %}

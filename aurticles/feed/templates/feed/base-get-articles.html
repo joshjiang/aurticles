@@ -3,11 +3,5 @@
 {% block title %}Aurticles{% endblock %}
 
 {% block content %}
-<h2><i class="fas fa-newspaper    "></i> Feed</h2>
-{% for article in articles %}
-<a href="{% url 'detail' article.id %}">
-    <h2>{{ article.title }}</h2>
-    <p>{{ article.body }}</p>
-</a>
-{% endfor %}
+<h2><i class="fas fa-check    "></i> Sucessfully Got Articles</h2>
 {% endblock %}

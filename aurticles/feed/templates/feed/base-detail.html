@@ -1,0 +1,26 @@
+{% extends "feed/base.html" %}
+{% load static %}
+
+{% block content %}
+<h3><i class="fas fa-newspaper"></i> {{ article.title }}</h3>
+<hr>
+
+    <button type="button" class="btn btn-primary"><a style="color:inherit" href="{{article.hyperlink}}"><i class="fas fa-link    "></i>
+            Original Article</a></button>
+    <p><i class="fas fa-th    "></i> {{ article.categories }}</p>
+      
+    <p><i class="fas fa-clock    "></i> {{ article.time_published }}</p>
+    {% if article.publisher is not None %}
+    <p><i class="fab fa-facebook-square    "></i>{{ article.publisher }}</p>
+    
+    <audio controls>
+
+            <source src="{% static 'feed/noam_chomsky.mp3' %}" type="audio/ogg">
+          Your browser does not support the audio element.
+    </audio>
+          
+
+    <p> {{ article.body}}</p>
+    {% endif %}
+
+{% endblock %}
